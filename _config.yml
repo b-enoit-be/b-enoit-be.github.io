@@ -2,6 +2,7 @@ title: "b.enoit.be"
 description: "In case you would wonder who am I"
 encoding: UTF-8
 timezone: Europe/Brussels
+excerpt_separator: <!--more-->
 
 plugins:
   - jekyll-sitemap
