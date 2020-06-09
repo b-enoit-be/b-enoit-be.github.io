@@ -1,0 +1,63 @@
+.timeline-row {
+    &:nth-child(2n) .timeline {
+      margin-left: 0;
+    }
+     
+    &::before {
+      right: calc(100% - 2.1875rem);
+    }
+
+    .timeline-icon {
+      right: initial;
+    }
+
+    .timeline {
+      width: 100%;
+    }
+
+    .title {
+      margin-left: 2.1875rem;
+    }
+    .company {
+      margin-left: 2.1875rem;
+    }
+    .description {
+      margin-left: 2.1875rem;
+    }
+
+    &:nth-child(odd) .title {
+      text-align: left;
+      padding: 0 0.25rem 0 1.5rem;
+    }
+
+    &:nth-child(odd) .company {
+      flex-direction: row-reverse;
+      padding: 0 0.25rem 0 1.5rem;
+
+      .year {
+        margin-right: auto;
+        margin-left: 0;
+        padding: 0 0.25rem 0 0;
+      }
+    }
+
+    &:nth-child(odd) .description {
+      padding: 0 0.25rem 0 1.5rem;
+    }
+
+    &:nth-child(even) .company {
+      padding: 0 0.25rem 0 1.5rem;
+
+      .year {
+        padding: 0 0.25rem 0 0;
+      }
+    }
+
+    &:nth-child(even) .title {
+      padding: 0 0.25rem 0 1.5rem;
+    }
+
+    &:nth-child(even) .description {
+      padding: 0 0.25rem 0 1.5rem;
+    }
+  }

@@ -2,33 +2,71 @@
   position: relative;
 
   .timeline {
-    width: calc(50% - 10px);
+    width: calc(50% - 0.5rem);
   }
 
   .title {
-    border-bottom: 3px solid;
+    border-bottom: 0.1875rem solid;
+  }
+
+  &:nth-child(even) .title {
+    text-align: left;
+    padding: 0 0.25rem 0 1.5rem;
+  }
+
+  &:nth-child(odd) .title {
+    text-align: right;
+    padding: 0 1.5rem 0 0.25rem;
+  }
+
+  &:nth-child(even) .company {
+    flex-direction: row-reverse;
+    padding: 0 0.25rem 0 1.5rem;
+
+    .year {
+      margin-right: auto;
+      padding-right: 0.25rem;
+    }
+  }
+
+  &:nth-child(odd) .company {
+    flex-direction: row;
+    padding: 0 1.5rem 0 0.25rem;
+
+    .year {
+      margin-left: auto;
+      padding-left: 0.25rem;
+    }
+  }
+
+  &:nth-child(even) .description {
+    padding: 0 0.25rem 0 1.5rem;
+  }
+
+  &:nth-child(odd) .description {
+    padding: 0 1.5rem 0 0.25rem;
   }
 
   .timeline-icon {
-    right: calc(50% - 25px);
+    right: calc(50% - 1.5rem);
     position: absolute;
     background-color: lighten(#1c9246, 20%);
-    border: 5px solid #1c9246;
+    border: 0.3125rem solid #1c9246;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3em;
 
     i {
       background-color: #fff;
       border-radius: 50%;
-      width: 34px;
-      height: 34px;
-      margin: 3px;
-      padding-top: 6px;
+      width: 2.125rem;
+      height: 2.125rem;
+      margin: 0.1rem;
+      padding-top: 0.35rem;
       display: block;
       text-align: center;
-      font-size: 20px;
-      border: 2px solid #1c9246;
+      font-size: 1.25rem;
+      border: 0.125rem solid #1c9246;
     }
   }
 
@@ -59,18 +97,18 @@
     }
   }
 
-  &:nth-child(2n) .timeline {
-    margin-left: calc(50% + 10px);
+  &:nth-child(even) .timeline {
+    margin-left: calc(50% + 0.625rem);
   }
 
   &::before {
     content: "";
-    border-top: 10px solid #921509;
+    border-top: 0.625rem solid #921509;
     background-color: #1c9246;
-    width: 20px;
+    width: 1.25rem;
     height: 100%;
     position: absolute;
-    right: calc(50% - 10px);
+    right: calc(50% - 0.625rem);
   }
 
   &:nth-child(2n + 1) .title {
@@ -107,4 +145,12 @@
   &:first-child::before {
     border-top-color: #fff;
   }
+}
+
+@media (max-width: breakpoint-max('md', $grid-breakpoints)) {
+  @import 'cv-media';
+}
+
+@media print {
+  @import 'cv-media';
 }
