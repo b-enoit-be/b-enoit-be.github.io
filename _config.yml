@@ -5,4 +5,5 @@ timezone: Europe/Brussels
 excerpt_separator: <!--more-->
 
 plugins:
+  - jekyll-redirect-from
   - jekyll-sitemap
