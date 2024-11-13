@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - https://docs.google.com/document/d/1YcoBJki54EDp6Av74CwFicnAvam_LIwGc7rOjCrlBCM/edit?usp=sharing
+  - https://docs.google.com/presentation/d/1JZ1EBxnQVz3p41NOmp__LL9F22aU2TIOLpnS_b-blUM/edit?usp=share_link
 ---
