@@ -6,20 +6,33 @@
     <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5">
       <div class="modal-dialog" role="document">
         <div class="modal-content rounded-4 shadow">
-          <div class="modal-body p-5">
+          <div class="modal-body p-4">
+            <div class="container pb-3">
+              <div class="row d-flex justify-content-center">
+                <div class="col-4">
+                  <img
+                    src="/assets/image/benoit.png"
+                    style="margin-top: -80px; width: 100%;"
+                    class="border-1 border border-dark-subtle p-0 rounded-circle shadow"
+                    alt="Benoît"/>
+                  </div>
+              </div>
+            </div>
             {{ content }}
             <div class="container text-center mt-5">
               <div class="row d-flex align-items-end">
                 {% for _link in page.about_links %}
                   <div class="col">
-                    <a class="p-1 link-body-emphasis link-underline link-underline-opacity-0" href="{{ _link.url }}">
+                    {% assign _redirect_page_path = _link.internal_url | append: ".md" %}
+                    {% assign _redirect_page = site.pages | where: 'path', _redirect_page_path %}
+                    <a class="p-1 link-body-emphasis link-underline link-underline-opacity-0" href="{{ _redirect_page[0].redirect_to[0] }}">
                       {% if _link.icon %}
-                        <i class="bi-{{ _link.icon }}" style="font-size: xx-large;"></i>
+                        <i class="bi-{{ _link.icon }}" style="font-size: 2.5em;"></i>
                       {% elsif _link.svg and _link.view_box %}
-                        <i class="bi-" style="font-size: xx-large;">
-                          <svg style="vertical-align: -.125em"
+                        <i>
+                          <svg style="vertical-align: .25em;"
                             xmlns="http://www.w3.org/2000/svg"
-                            width="32" height="32"
+                            width="2.5em" height="2.5em"
                             viewBox="{{ _link.view_box }}">
                             <path fill="currentColor" d="{{ _link.svg }}" />
                           </svg>
